@@ -1,15 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <ListItemComponent></ListItemComponent> -->
+   <ListItemComponent :titluTask="titluTask1" />
+   <ListItemComponent />
+
+   <!-- v-model - legarea unei variabile a unui component cu un input -->
+   <input type="text" v-model="titluTask1">
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ListItemComponent from './components/ListItemComponent';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ListItemComponent,
+  },
+  // Data - utilizata pentru crearea de date interne
+  data() {
+    return {
+      titluTask1: 'Crearea unui proiect Vue cu TS'
+    }
   }
 }
 </script>
@@ -22,5 +32,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+input {
+  width:400px;
+  height: 30px;
+  font-size: 24px;
 }
 </style>
